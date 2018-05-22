@@ -1,1 +1,4 @@
-text box
+<%= form_tag('/user/login', method: 'post') do %>
+  <div><%= number_field_tag "mobile" %></div>
+  <div><%= submit_tag 'Send' %></div>
+<% end %>

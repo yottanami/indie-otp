@@ -14,7 +14,7 @@ module Indie::Otp
       unless mobile.nil?
         user = User.find_by mobile: mobile
         if user.nil?
-          flash[:error] = "User not found"
+          flash[:danger] = "User not found"
         else
           SMSModule.send(mobile, user.generate_otp)
         end
@@ -29,7 +29,7 @@ module Indie::Otp
 
     private
     def user_params
-      params.require(:user).permit(:mobile)
+      params.permit(:mobile)
     end
   end
 end

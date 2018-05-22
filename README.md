@@ -20,6 +20,7 @@ $ bundle
 Or install it yourself as:
 ```bash
 $ gem install indie-otp
+bin/rails indie_otp:install:migrations
 ```
 
 ## Contributing
