@@ -9,6 +9,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'indie-otp'
+rails g indie-otp:install
 ```
 
 And then execute:
