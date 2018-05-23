@@ -15,6 +15,7 @@ module Indie::Otp
         user = User.find_by mobile: mobile
         if user.nil?
           flash[:danger] = "User not found"
+          redirect_to user_request_otp_path
         else
           SMSModule.send(mobile, user.generate_otp)
         end
