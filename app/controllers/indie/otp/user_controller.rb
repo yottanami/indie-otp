@@ -2,6 +2,11 @@ require_dependency "indie/otp/application_controller"
 
 module Indie::Otp
   class UserController < ApplicationController
+    before_action :authenticate!, only: :home
+
+    def home
+
+    end
 
     def request_otp
     end
@@ -35,7 +40,7 @@ module Indie::Otp
         user = User.find_by id: session[:current_otp_id]
         unless user.nil?
           if user.authenticate_otp(otp)
-            cookies[:remember_token] = user.id
+            session[:user] = user.id
             flash[:success] = "Welcome back!"
           else
             flash[:danger] = "Wrong OTP"

@@ -1,4 +1,5 @@
 Indie::Otp::Engine.routes.draw do
+  get 'user/home'
   get 'user/register'
   get 'user/request_otp'
   post 'user/generate_otp'
