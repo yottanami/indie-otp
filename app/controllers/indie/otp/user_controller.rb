@@ -17,10 +17,10 @@ module Indie::Otp
           redirect_to user_request_otp_path
         else
           otp_message = "Your Code is #{user.otp_code}"
-          sms_result = ::SMSModule.send(mobile, otp_message)
+          sms_result = ::SMSModule.send_message(mobile, otp_message)
           if  sms_result == true
             session[:current_otp_id] = user.id
-   redirect_to user_check_otp_path
+#            redirect_to user_check_otp_path
           else
             flash[:danger] = "Can not send text message!"
             redirect_to user_request_otp_path
@@ -35,7 +35,7 @@ module Indie::Otp
         user = User.find_by id: session[:current_otp_id]
         unless user.nil?
           if user.authenticate_otp(otp)
-            cookies[:current_user_id] = user.id
+            cookies[:remember_token] = user.id
             flash[:success] = "Welcome back!"
           else
             flash[:danger] = "Wrong OTP"
@@ -48,7 +48,7 @@ module Indie::Otp
         end
       else
          flash[:danger] = "OTP info did not send!"
-         redirect_to user_generate_otp_path
+         redirect_to user_request_otp_path
       end
     end
 

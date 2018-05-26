@@ -1,5 +1,5 @@
 module SMSModule
-  def send
+  def self.send_message
 
   end
 end
