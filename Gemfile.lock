@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    indie-otp (0.1.0)
+    indie-otp (0.1.1)
       active_model_otp
       rails (~> 5.2.0)
 
