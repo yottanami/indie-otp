@@ -41,7 +41,7 @@ module Indie::Otp
         unless user.nil?
           if user.authenticate_otp(otp)
             session[:user] = user.id
-            redirect_to root_path
+            redirect_to '/'
           else
             flash[:danger] = "Wrong OTP"
             redirect_to user_request_otp_path
