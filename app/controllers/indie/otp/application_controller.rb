@@ -1,6 +1,6 @@
 module Indie
   module Otp
-    class ApplicationController < ApplicationController
+    class ApplicationController < ApplicationController::Base
       protect_from_forgery with: :exception
 
 
