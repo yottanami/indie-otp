@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Indie::Otp::Engine => "/indie-otp"
+  mount IndieOtp::Engine => "/indie_otp"
 end

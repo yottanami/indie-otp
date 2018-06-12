@@ -1,4 +1,4 @@
-# Indie::Otp
+# IndieOtp
 Short description and motivation.
 
 ## Usage
@@ -8,8 +8,7 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'indie-otp'
-rails g indie-otp:install
+gem 'indie_otp'
 ```
 
 And then execute:
@@ -19,8 +18,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install indie-otp
-bin/rails indie_otp:install:migrations
+$ gem install indie_otp
 ```
 
 ## Contributing

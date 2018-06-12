@@ -1,2 +1,2 @@
-//= link_directory ../javascripts/indie/otp .js
-//= link_directory ../stylesheets/indie/otp .css
+//= link_directory ../javascripts/indie_otp .js
+//= link_directory ../stylesheets/indie_otp .css
