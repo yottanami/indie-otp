@@ -18,8 +18,8 @@ module IndieOtp
       unless mobile.nil?
         user = User.find_by mobile: mobile
         if user.nil?
-          flash[:danger] = "User not found"
-          redirect_to user_request_otp_path
+          reset_session
+          redirect_to '/'
         else
           otp_message = "Your Code is #{user.otp_code}"
           sms_result = ::SMSModule.send_message(mobile, otp_message)
