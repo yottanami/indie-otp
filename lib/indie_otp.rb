@@ -11,6 +11,6 @@ module IndieOtp
     end
 
     def authenticate!
-      redirect_to user_request_otp_path unless user_signed_in?
+      redirect_to IndieOtp::Engine.routes.url_helpers.user_request_otp_path unless user_signed_in?
     end
 end
