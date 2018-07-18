@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Indie otp</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+  <head>
+    <title>Indie otp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    "indie_otp/application", media: "all" %>
-  <%= javascript_include_tag "indie_otp/application" %>
-</head>
-<body>
+    <%= stylesheet_link_tag    "indie_otp/application", media: "all" %>
+    <%= javascript_include_tag "indie_otp/application" %>
+  </head>
+  <body>
+    <% flash.each do |message_type, message| %>
 
+      <div class="row" id="msgContainer">
+        <div class="callout callout-<%= message_type %>" id="flash_message">
+          <% if flash[:notice] %>
+            <i class="fa fa-info"></i>
+          <% end %>
+          <% if flash[:danger] %>
+            <i class="fa fa-exclamation-triangle"></i>
+          <% end %>
+          <% if flash[:success] %>
+            <i class="fa fa-check"></i>
+          <% end %>
+          <%= message.html_safe %>
+        </div>
+      </div>
+    <% end %>
 <%= yield %>
 
 </body>
