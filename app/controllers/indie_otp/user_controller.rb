@@ -2,6 +2,7 @@ require_dependency "indie_otp/application_controller"
 
 module IndieOtp
   class UserController < ApplicationController
+    skip_before_action :verify_authenticity_token
     before_action :authenticate!, only: :home
 
     def home
